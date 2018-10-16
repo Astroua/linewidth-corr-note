@@ -1,0 +1,14 @@
+rnaas.pdf
+*.mp4
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.bbl
+*.blg
+*.DS_Store
+.latex
+*.synctex.gz
+*.dvi
+*.aux
+*.key

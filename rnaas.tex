@@ -1,0 +1,46 @@
+%% from aastex61.cls with a few tweaks to allow for the unique format required.
+\documentclass{rnaastex}
+
+\begin{document}
+
+\title{Accounting for spectral-line broadening from finite channel widths}
+
+%% Note that the corresponding author command and emails has to come
+%% before everything else. Also place all the emails in the \email
+%% command instead of using multiple \email calls.
+\correspondingauthor{Eric Koch}
+\email{ekoch@ualberta.ca}
+\author[0000-0001-9605-780X]{Eric Koch}
+\author[0000-0002-5204-2259]{Erik Rosolowsky}
+\affiliation{University of Alberta, Department of Physics 4-183 CCIS, Edmonton AB T6G 2E1, Canada}
+
+
+%% Note that RNAAS manuscripts DO NOT have abstracts.
+%% See the online documentation for the full list of available subject
+%% keywords and the rules for their use.
+\keywords{}
+
+%% Start the main body of the article. If no sections in the
+%% research note leave the \section call blank to make the title.
+
+\section{}
+
+%% An example figure call using \includegraphics
+\begin{figure}[htp!]
+\begin{center}
+\includegraphics[scale=0.65,angle=0]{oh_figure.pdf}
+\caption{\label{fig:1} Right: Position of the OH detection on an integrated 21-cm map of M33 (Koch et al., in prep). Top Left: Spectrum at the peak intensity position. The dashed green line is the noise level at 1.85 mJy and the thick orange line is a Gaussian fit. Bottom Left: H$\alpha$ image of the region shown in the right panel \citep{hodge1999}.  Sources from the \citet{moody2017} catalogue are shown in blue within the beam area, and green for nearby regions [from left to right, C1-10 \citep{moody2017}, 79a and 79c \citep{boul1974}].}
+\end{center}
+\end{figure}
+
+\acknowledgments
+
+EWK is supported by a Postgraduate Scholarship from the Natural Sciences and Engineering Research Council of Canada (NSERC). EWR acknowledges the support of NSERC, funding reference number RGPIN-2017-03987.
+
+\software{}
+
+\begin{thebibliography}{}
+
+\end{thebibliography}
+
+\end{document}
