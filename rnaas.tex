@@ -20,7 +20,7 @@
 %% Note that RNAAS manuscripts DO NOT have abstracts.
 %% See the online documentation for the full list of available subject
 %% keywords and the rules for their use.
-\keywords{}
+\keywords{methods: observational}
 
 %% Start the main body of the article. If no sections in the
 %% research note leave the \section call blank to make the title.
@@ -72,7 +72,7 @@ Our results show:
 We stress that these recommendations are only for {\it high signal-to-noise, Gaussian spectra}. Noise or multi-component spectra will change the biases for these methods and can be explored for individual data sets.
 % We also note that these methods will break down when the Gaussian assumption is invalid \citep{koch2018}.
 
-Code is available at: \url{https://github.com/Astroua/linewidth-corr-note}.
+Code is available at: \url{https://github.com/Astroua/linewidth-corr-note}\footnote{\url{https://doi.org/10.5281/zenodo.1491796}}.
 
 % The examples in Figure \ref{fig:width_recovery_comparison} do not include noise in the spectra.  We test the forward-modelling model in the presence of noise drawn to give a peak signal-to-noise of 5 in the spectrum.  The noisy spectrum is then convolved with the response function used above to correlate the noise.  Drawing 1000 iterations of noise, we find that the fitted parameters are not biased by line broadening.  However, the Levenberg-Marquadt algorithm used for the fitting assumes that the noise is uncorrelated.  We test whether breaking this assumption significantly underestimates the parameter uncertainties from the covariance matrix by calculating the fraction of iterations that the true parameter value lies within the $1\mbox{-}\sigma$ uncertainty range from the fit.  We find that true values are within the uncertainty range in $\sim70\%$ of the iterations, similar to the expected $68.2\%$ for the $1\mbox{-}\sigma$ range for a Gaussian distribution.  The lack of modelling for correlated errors should not significantly change the uncertainties.  The correlated noise may become more important if the spectral response function correlates channels beyond their nearest neighbours.  In that case, a Gaussian process can be used to model the correlated uncertainties XXX rasmussen and michaels XXX.
 
