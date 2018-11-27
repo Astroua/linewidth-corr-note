@@ -36,10 +36,10 @@ Real spectrometers have more complex spectral responses than a top-hat.  Fourier
 The top row in Figure \ref{fig:width_recovery_comparison} shows a Gaussian averaged over independent channels and convolved with a Hann-like kernel with $\Delta v=\sigma$ ($k=0.11$).  The two panels show how line broadening depends on whether the line is positioned in the centre (minimal broadening) or edge (maximal broadening) of a channel.  As a source property, the positioning cannot be assumed beforehand.
 
 % To recover the line properties, the spectral response can be included in the model for the observed spectrum.
-The spectral response can be forward-modeled when fitting the observed spectrum by convolving with a Hann-like kernel.  Forward-modelling the spectral response is common-practice in many fields \citep[e.g.,][]{martin2015}, but is seldom used in radio studies.  Because no noise is added, this model correctly recovers the line properties.
+The spectral response can be forward-modeled when fitting the observed spectrum by convolving with a Hann-like kernel.  Forward-modelling the spectral response is common-practice in many fields \citep[e.g.,][]{martin2015}, but is seldom used in radio studies.  Without noise, this model correctly recovers the line properties.
 
 % While forward-modelling accounts for the spectral response, the spectrum must be fit, which requires knowing a correct model and may be affected by noise.
-Forward-modelling requires fitting the spectrum, which can be difficult with noisy data. Instead, many studies use approximations to estimate the line width, including:
+Forward-modelling requires fitting the spectrum, which can be difficult with noisy data. Instead, many studies use approximations to estimate the line width:
 % We compare forward-model fitting with:
 \begin{enumerate}
     \item {\bf Fit to Gaussian} without forward-modelling.
@@ -48,13 +48,13 @@ Forward-modelling requires fitting the spectrum, which can be difficult with noi
     \item {\bf Half-width-half-max (HWHM)} estimated from where the observed spectrum is half the peak \citep{stilp2013a,stilp2013b,koch2018}.
 \end{enumerate}
 
-Many studies correct the measured line width by subtracting in quadrature a factor for broadening from a top-hat kernel, namely $\Delta v / \sqrt{2\pi}$ \citep{cprops}.  To account for channel correlations, \citet{leroy2016} extended this correction factor with an empirical calibration relating channel correlations to a Hann-like kernel:
+Many studies correct the measured line width by subtracting in quadrature a factor for top-hat kernel broadening, namely $\Delta v / \sqrt{2\pi}$ \citep{cprops}.  To account for channel correlations, \citet{leroy2016} extended this correction factor with an empirical calibration relating channel correlations to a Hann-like kernel:
 % ($k\approx 0.0 + 0.47r - 0.23r^2 - 0.16r^3 + 0.43 r^4$).
 \begin{equation}
     \label{eq:leroy16_corrfact}
     \sigma_{\rm chan} \approx \frac{\Delta v}{\sqrt{2\pi}} \left( 1.0 + 1.18k + 10.4k^2 \right).
 \end{equation}
-As $k\rightarrow0$, the equation reduces to the assumed correction factor of a top-hat response.  We adopt $k=0.11$ for our example \citep{sun2018}.
+As $k\rightarrow0$, the equation reduces to $\Delta v / \sqrt{2\pi}$.  We adopt $k=0.11$ for our example \citep{sun2018}.
 
 We generate model spectra varying the sampling $\Delta v / \sigma$ and calculating the line width from each method, with and without subtracting Eq. \ref{eq:leroy16_corrfact}, for independent channels (top-hat) and correlated channels. The bottom four panels in Figure \ref{fig:width_recovery_comparison} show the measured line widths.
 
@@ -91,15 +91,13 @@ Code is available at: \url{https://doi.org/10.5281/zenodo.1491796}.
 
 EWR acknowledges support from the Natural Sciences and Engineering Research Council of Canada (RGPIN-2017-03987). AKL is partially supported by the National Science Foundation under Grants No. 1615105, 1615109, and 1653300.
 
-% \software{astropy \citep{astropy}} % , matplotlib \citep{mpl}}
+\software{astropy \citep{astropy}}
 
 \begin{thebibliography}{}
 
-% \bibitem[Astropy Collaboration et al.(2018)]{astropy} Astropy Collaboration, Price-Whelan, A.~M., Sip{\'{o}}cz, B.~M., et al.\ 2018, AJ, 156, 123.
+\bibitem[Astropy Collaboration et al.(2018)]{astropy} Astropy Collaboration, Price-Whelan, A.~M., Sip{\'{o}}cz, B.~M., et al.\ 2018, AJ, 156, 123.
 
 \bibitem[Heyer et al.(2001)]{heyer2001} Heyer, M.~H., Carpenter, J.~M., \& Snell, R.~L.\ 2001, ApJ, 551, 852.
-
-% \bibitem[Hunter(2007)]{mpl} Hunter, J.~D.\ 2007, Computing in Science and Engineering, 9, 90.
 
 \bibitem[Koch et al.(2018)]{koch2018} Koch, E.~W., Rosolowsky, E.~W., Lockman, F.~J., et al.\ 2018, MNRAS, 479, 2505.
 
